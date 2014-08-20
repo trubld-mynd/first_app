@@ -25,6 +25,13 @@ gem 'jbuilder', '~> 2.0'
 group :doc do
 	gem 'sdoc', '~> 0.4.0', require:false         
 end
+
+#PostgreSQL database, as used by Heroku, requires the pg gem in the production environment to allow Rails to talk to PostgreSQL
+group :production do
+	gem 'pg', '0.15.1'
+	gem 'rails_12factor', '0.0.2'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -39,3 +46,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+
